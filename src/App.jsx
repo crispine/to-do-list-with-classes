@@ -57,16 +57,10 @@ class App extends Component {
     this.setState({ tasks: allTasks })
   }
 
-  // it finds the task that we want to select
-  getTask = (id) => {
-    const task = this.state.tasks.find(task => task.id === id)
-    return task
-  }
-
   // it changes the status of the task to done (or not)
   handleCompleteTask = (id) => {
     const currentTasks = this.state.tasks
-    const task = this.getTask(id)
+    const task = this.state.tasks.find(task => task.id === id)
     const index = currentTasks.indexOf(task)
 
     currentTasks[index].done = !currentTasks[index].done
@@ -97,20 +91,18 @@ class App extends Component {
         {
           this.state.tasks.length === 0 && <h3>There aren't any tasks yet. Write one!</h3>
         }
-        <div>
-          {
-            tasks.map(task => (
-              <Task
-                key={id()}
-                title={task.title}
-                color={task.color}
-                done={task.done}
-                handleCompleteTask={() => this.handleCompleteTask(task.id)}
-                handleDeleteTask={() => this.handleDeleteTask(task.id)}
-              />
-            ))
-          }
-        </div>
+        {
+          tasks.map(task => (
+            <Task
+              key={id()}
+              title={task.title}
+              color={task.color}
+              done={task.done}
+              handleCompleteTask={() => this.handleCompleteTask(task.id)}
+              handleDeleteTask={() => this.handleDeleteTask(task.id)}
+            />
+          ))
+        }
       </>
     );
   }
