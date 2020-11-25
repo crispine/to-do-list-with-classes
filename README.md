@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-To do list is a web app that you can use as an agenda. It has an input where you can write a task. The the only thing that you have to do is to choose a color and press the "Add task" button. The task will automatically appear below.
+To do list is a web app done with React classes. You can use this To do list as an agenda. It has an input where you can write a task. The the only thing that you have to do is to choose a color and press the "Add task" button. The task will automatically appear below.
 
 Then, you can select the task to cross it out (or undo it) and press the "delete" button just to make disappear the task.
 
